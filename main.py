@@ -307,7 +307,7 @@ if __name__ == "__main__":
         criterion_cons = losses.MBCE()
         criterion_cluster = contrastive_loss.ClusterLoss(class_num, cluster_temperature, device).to(device)
         criterion_instance = contrastive_loss.InstanceLoss(batch_size, instance_temperature, device).to(device)
-        optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.01)
+        optimizer = torch.optim.Adam(model.parameters(), lr=0.00003, weight_decay=0.0003)
 
         reshape_data = nor_data.reshape(-1, channel, lenth // channel)
         x_ = reshape_data.astype(np.float32)
